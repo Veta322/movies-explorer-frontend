@@ -1,0 +1,38 @@
+import circle from "../../../images/circle.png";
+import web from "../../../images/promo_img.png";
+import { Link } from "react-router-dom";
+
+function Promo() {
+  return (
+    <section className="promo">
+      <header className="promo__header">
+        <img className="promo__logo" alt="circle" src={circle} />
+        <div className="promo__links">
+          <Link to="/signup" className="promo__link" type="button">
+            Регистрация
+          </Link>
+          <Link to="/signin" className="promo__link promo__link_black" type="button">
+            Войти
+          </Link>
+        </div>
+      </header>
+      <main className="promo__content">
+        <img className="promo__content_image" alt="web" src={web} />
+        <div className="promo__text">
+          <h1 className="promo__text_tittle">
+            Учебный проект студента факультета Веб-разработки.
+          </h1>
+          <p className="promo__text_subtittle">
+            Листайте ниже, чтобы узнать больше про этот проект и&nbsp;его
+            создателя.{" "}
+          </p>
+        </div>
+      </main>
+      <Link to="/movies">
+        <button className="promo__btn">Узнать больше</button>{" "}
+      </Link>
+    </section>
+  );
+}
+
+export default Promo;
