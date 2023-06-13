@@ -9,12 +9,12 @@ function Login() {
         <img className="login__logo" alt="logo" src={logo} />
       </Link>
       <h2 className="login__greeting">Рады видеть!</h2>
-      <div className="login__form">
+      <form className="login__form">
         <label className="login__form_type">E-mail</label>
         <input className="login__form_input" placeholder="Введите ваш E-mail" required></input>
         <label className="login__form_type">Пароль</label>
         <input className="login__form_input" placeholder="Введите ваш пароль" required></input>
-      </div>
+      </form>
       <button className="login__btn">Войти</button>
       <p className="login__text">
         {" "}

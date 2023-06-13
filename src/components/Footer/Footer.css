@@ -37,7 +37,7 @@
     line-height: 16px;
 }
 
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 568px) {
     .footer{
         padding: 79px 10px 20px 10px ;
         justify-content: center;

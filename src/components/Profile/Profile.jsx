@@ -5,16 +5,16 @@ function Profile() {
   return (
     <section className="profile">
       <h2 className="profile__greeting">Привет, Вета!</h2>
-      <div className="profile__info">
+      <form className="profile__info">
         <div className="profile__elem">
           <p className="profile__type">Имя</p>
-          <p className="profile__mean">Вета</p>
+          <input className="profile__mean" value="Вета"></input>
         </div>
         <div className="profile__elem">
           <p className="profile__type">E-mail</p>
-          <p className="profile__mean">vetakomolova@yandex.ru</p>
+          <input className="profile__mean" value="vetakomolova@yandex.ru"></input>
         </div>
-      </div>
+      </form>
       <Link to="/profile" className="profile__edit">
         Редактировать
       </Link>

@@ -100,7 +100,7 @@
     }
 }
 
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 568px) {
     .landing_title {
         font-size: 18px;
         line-height: 22px;
