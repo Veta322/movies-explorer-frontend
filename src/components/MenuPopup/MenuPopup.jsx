@@ -15,7 +15,6 @@ function MenuPopup({ isOpen, onClose }) {
                   <span className="header__burger_line"></span>
                 </div>
         <Navigation onClose={onClose} />
-       
       </div>
     </div>
   );

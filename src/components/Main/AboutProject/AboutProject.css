@@ -43,8 +43,9 @@
 }
 
 .time {
+    width: 100%;
     display: grid;
-    grid-template-columns: 228px 912px;
+    grid-template-columns: 228px auto;
     grid-template-rows: 36px 36px;
 }
 
@@ -72,7 +73,7 @@
     color: #A0A0A0;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 984px) {
     .about {
         padding: 90px 50px;
     }
@@ -85,10 +86,7 @@
     .about__block {
         gap: 22px;
         width: 319px;
-
     }
-
-
 
     .about__block_text {
         font-size: 12px;
@@ -96,7 +94,8 @@
     }
 
     .time {
-        grid-template-columns: 140px 528px;
+        width: 100%;
+        grid-template-columns: 140px auto;
         grid-template-rows: 36px 36px;
     }
 }
@@ -137,7 +136,8 @@
 
 
     .time {
-        grid-template-columns: 100px 184px;
+        width: 100%;
+        grid-template-columns: 100px auto;
         grid-template-rows: 35px 35px;
     }
 

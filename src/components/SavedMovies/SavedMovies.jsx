@@ -12,7 +12,6 @@ function Movies(props) {
       <main className="movies">
         <SearchForm />
         <MoviesCardList />
-    
       </main>
       <Footer />
     </>

@@ -1,4 +1,4 @@
-import logo from "../../images/circle.png";
+import logo from "../../images/circle.svg";
 import profile from "../../images/profile.svg";
 import { Link } from "react-router-dom";
 

@@ -38,7 +38,7 @@
 }
 
 .regist__form_input:focus {
-    outline: none;
+    outline: 1px solid black;
 }
 
 .regist__error {
@@ -55,6 +55,8 @@
     width: 396px;
     height: 45px;
     margin: 70px 0 16px;
+    border-radius: 3px;
+    border: none;
 }
 
 .regist__text {
@@ -70,14 +72,14 @@
     color: #000000;
     text-decoration: none;
 }
+@media screen and (max-width: 984px) {
+    .regist{
+        padding: 232px 0;
+    }
 
+}
 
-
-@media screen and (max-width: 768px) {}
-
-
-
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 568px) {
     .regist {
         padding: 0;
         align-items: center

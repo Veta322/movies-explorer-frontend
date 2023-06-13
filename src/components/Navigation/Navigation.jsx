@@ -1,7 +1,6 @@
 import { Link } from "react-router-dom";
 import profile from "../../images/profile.svg";
 
-
 function Navigation({ onClose }) {
   return (
     <div className="navigation">
@@ -14,15 +13,12 @@ function Navigation({ onClose }) {
       <Link className="navigation__link" to="/saved-movies" onClick={onClose}>
         Сохранённые фильмы
       </Link>
-      
-        <Link to="/profile" className="navigation__profile" onClick={onClose} >
-          <p className="navigation__link_profile">Аккаунт</p>
-          
-          <img className="navigation__profile_img" alt="profile" src={profile} />
-        </Link>
-       
-     
 
+      <Link to="/profile" className="navigation__profile" onClick={onClose}>
+        <p className="navigation__link_profile">Аккаунт</p>
+
+        <img className="navigation__profile_img" alt="profile" src={profile} />
+      </Link>
     </div>
   );
 }

@@ -28,7 +28,6 @@ function AboutProject() {
           <p className="time__web week">Back-end</p>
           <p className="time__web week">Front-end</p>
         </div>
-     
     </section>
   );
 }

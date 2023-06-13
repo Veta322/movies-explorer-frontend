@@ -1,5 +1,5 @@
-import circle from "../../../images/circle.png";
-import web from "../../../images/promo_img.png";
+import circle from "../../../images/circle.svg";
+import web from "../../../images/promo_img.svg";
 import { Link } from "react-router-dom";
 
 function Promo() {
@@ -17,6 +17,7 @@ function Promo() {
         </div>
       </header>
       <main className="promo__content">
+        
         <img className="promo__content_image" alt="web" src={web} />
         <div className="promo__text">
           <h1 className="promo__text_tittle">
@@ -26,11 +27,13 @@ function Promo() {
             Листайте ниже, чтобы узнать больше про этот проект и&nbsp;его
             создателя.{" "}
           </p>
-        </div>
-      </main>
-      <Link to="/movies">
+          <Link to="/movies">
         <button className="promo__btn">Узнать больше</button>{" "}
       </Link>
+        </div>
+      
+      </main>
+     
     </section>
   );
 }

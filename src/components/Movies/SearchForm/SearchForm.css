@@ -30,7 +30,7 @@
 }
 
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 984px) {
     .search{
         flex-direction: column;
     }
@@ -40,13 +40,13 @@
     }
 }
 
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 714px) {
     .search{
         padding: 60px 0 0 0;
     }
 
     .search__form {
-        width: 300px;
+        width: 90%;
     }
 }
 

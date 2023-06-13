@@ -9,6 +9,7 @@ import Register from "../Register/Register"
 import Login from "../Login/Login"
 import MenuPopup from "../MenuPopup/MenuPopup";
 import SavedMovies from "../SavedMovies/SavedMovies"
+import Footer from "../Footer/Footer"
 
 import { useState } from "react";
 import { Routes, Route} from "react-router-dom";
@@ -29,7 +30,7 @@ function App() {
     <CurrentUserContext.Provider>
       <div className="page">
         <Routes>
-          <Route path="/" element={<Main />} />
+          <Route path="/" element={<><Main/><Footer/></>}  />
           <Route path="/profile" element={<><Header onMenuClick={handleIsMenuPopupOpen}/><Profile /></>} />
           <Route
             path="/movies"

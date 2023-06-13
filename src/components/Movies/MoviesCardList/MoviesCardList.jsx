@@ -12,6 +12,7 @@ function MoviesCardList() {
    <MoviesCard/>
    <MoviesCard/> 
    <MoviesCard/> 
+   <MoviesCard/> 
  </div>
  <button className="movies-list__btn">Ещё</button>
  </section>

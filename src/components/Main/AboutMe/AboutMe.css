@@ -50,7 +50,7 @@
     line-height: 17px;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 984px) {
     .student {
         padding: 90px 50px;
     }
@@ -81,13 +81,14 @@
 }
 
 
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 713px) {
     .student {
         padding: 70px 14px;
     }
 
     .student__content {
         flex-direction: column;
+        align-items: center;
     }
 
     .student__name {

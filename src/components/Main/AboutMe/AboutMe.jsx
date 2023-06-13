@@ -25,9 +25,7 @@ function AboutMe() {
         Github
       </a>
         </div>
-        
       </div>
-    
     </section>
   );
 }

@@ -10,9 +10,9 @@
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: auto;
-    padding: 70px;
+    padding: 70px 0;
     row-gap: 32px;
-    column-gap: 28px;
+    column-gap: 32px;
 }
 
 .movies-list__btn {
@@ -28,7 +28,7 @@
 }
 
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1152px) {
     .movies-list {
         grid-template-columns: 1fr 1fr;
         grid-template-rows: auto;
@@ -39,7 +39,7 @@
 
 }
 
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 714px) {
     .movies-list {
         grid-template-columns: 1fr;
         grid-template-rows: auto;

@@ -38,7 +38,7 @@
 }
 
 .login__form_input:focus {
-    outline: none;
+    outline: 1px solid black;
 }
 
 .login__error {
@@ -54,6 +54,8 @@
     width: 396px;
     height: 45px;
     margin: 179px 0 16px;
+    border-radius: 3px;
+    border: none;
 }
 
 .login__text {
@@ -71,9 +73,19 @@
 }
 
 
+@media screen and (max-width: 984px) {
+    .login{
+        padding: 232px 0;
+    }
 
+    .login__btn {
+     
+        margin: 179px 0 16px;
+     
+    }
+}
 
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 568px) {
     .login {
         padding: 0;
         align-items: center

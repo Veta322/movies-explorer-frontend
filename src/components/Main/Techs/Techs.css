@@ -1,6 +1,6 @@
 .tech {
     background-color: #F5F5F5;
-    padding: 100px 70px;
+    padding: 100px 0;
     font-style: normal;
 }
 
@@ -50,7 +50,7 @@
     letter-spacing: -0.04em;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 984px) {
     .tech {
         padding: 90px 50px;
     }
@@ -77,9 +77,9 @@
     
 }
 
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 650px) {
     .tech {
-        padding: 70px 14px;
+        padding: 70px 0;
     }
     .tech__title {
         margin: 0 4px;
