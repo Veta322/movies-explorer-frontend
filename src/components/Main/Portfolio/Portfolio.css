@@ -1,3 +1,35 @@
+@keyframes arrow {
+	0%,
+	100% {
+		transform: rotate(0deg);
+		transform-origin: 0 50%;
+	}
+
+	10% {
+		transform: rotate(2deg);
+	}
+
+	20%,
+	40%,
+	60% {
+		transform: rotate(-4deg);
+	}
+
+	30%,
+	50%,
+	70% {
+		transform: rotate(4deg);
+	}
+
+	80% {
+		transform: rotate(-2deg);
+	}
+
+	90% {
+		transform: rotate(2deg);
+	}
+}
+
 .portfolio {
     padding: 0 70px 125px 70px;
     font-style: normal;
@@ -10,6 +42,8 @@
     color: #A0A0A0;
     mix-blend-mode: normal;
 }
+
+
 
 .portfolio__component {
     display: flex;
@@ -31,6 +65,11 @@
     line-height: 50px;
     letter-spacing: -0.04em;
     margin: 0;
+    transition: all .3s;
+}
+
+.portfolio__text:hover{
+    transform: scale(1.1);
 }
 
 .portfolio__arrow {
@@ -41,6 +80,7 @@
     line-height: 60px;
     letter-spacing: -0.04em;
     margin: 0;
+    animation: arrow 2s ease 0s infinite normal forwards;
 }
 
 @media screen and (max-width: 768px) {

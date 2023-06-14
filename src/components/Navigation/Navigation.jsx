@@ -3,7 +3,7 @@ import profile from "../../images/profile.svg";
 
 function Navigation({ onClose }) {
   return (
-    <div className="navigation">
+    <section className="navigation">
       <Link className="navigation__link" to="/" onClick={onClose}>
         Главная
       </Link>
@@ -15,10 +15,10 @@ function Navigation({ onClose }) {
       </Link>
 
       <Link to="/profile" className="navigation__profile" onClick={onClose}>
-        <p className="navigation__link_profile">Аккаунт</p>
-        <img className="navigation__profile_img" alt="profile" src={profile} />
+        <p className="navigation__link-profile">Аккаунт</p>
+        <img className="navigation__profile-img" alt="profile" src={profile} />
       </Link>
-    </div>
+    </section>
   );
 }
 

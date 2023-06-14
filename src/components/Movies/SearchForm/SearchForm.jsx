@@ -4,8 +4,8 @@ function SearchForm() {
   return (
     <div className="search">
       <form className="search__form">
-        <input className="search__form_input" placeholder="Фильм" required/>
-        <button className="search__form_btn" alt="search"/>
+        <input className="search__form_input" placeholder="Фильм" required />
+        <button className="search__form_btn" alt="search" />
       </form>
       <FilterCheckbox />
     </div>

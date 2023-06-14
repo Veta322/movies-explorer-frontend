@@ -57,6 +57,11 @@
     margin: 0 0 16px 0;
     text-decoration: none;
     color: black;
+    transition: all .3s;
+}
+
+.profile__edit:hover{
+    transform: scale(1.1);
 }
 
 .profile__logout {
@@ -66,4 +71,29 @@
     line-height: 16px;
     color: #FF4062;
     text-decoration: none;
+    transition: all .3s;
+}
+
+.profile__logout:hover{
+    transform: scale(1.1);
+}
+@media screen and (max-width: 568px) {
+    .profile{
+        padding: 30px;
+    }
+
+    .profile__info {
+        width: 260px;
+        margin-bottom: 379px;
+    }
+
+    .profile__edit {
+        font-size: 12px;
+        line-height: 15px;
+    }
+
+    .profile__logout {
+        font-size: 12px;
+        line-height: 15px;
+    }
 }

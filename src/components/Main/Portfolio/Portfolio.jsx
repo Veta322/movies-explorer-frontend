@@ -1,3 +1,5 @@
+
+/* Зачем здесь лишняя обертка списка? Тут обернуты в ссылки компоменты */
 function Portfolio() {
   return (
     <section className="portfolio">
@@ -10,6 +12,7 @@ function Portfolio() {
         <p className="portfolio__text">Статичный сайт</p>
         <p className="portfolio__arrow">↗</p>
       </a>
+      
       <a className="portfolio__component"
         href="https://veta322.github.io/russian-travel/"
         target="_blanck">
@@ -27,3 +30,4 @@ function Portfolio() {
 }
 
 export default Portfolio;
+

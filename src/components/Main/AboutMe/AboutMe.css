@@ -48,7 +48,13 @@
     font-weight: 500;
     font-size: 14px;
     line-height: 17px;
+
 }
+
+.student__gh:hover {
+    border-bottom: solid 2px #000;
+}
+
 
 @media screen and (max-width: 984px) {
     .student {

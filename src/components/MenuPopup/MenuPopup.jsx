@@ -5,12 +5,12 @@ function MenuPopup({ isOpen, onClose }) {
     <div className={`menu-popup ${isOpen ? "menu-popup_opened" : ""}`}>
       <div className="menu-popup__container">
       <div
-                  className="header__burger header__burger_open" 
+                  className="burger burger_open" 
                   onClick={onClose}
                 >
-                  <span className="header__burger_line"></span>
-                  <span className="header__burger_line"></span>
-                  <span className="header__burger_line"></span>
+                  <span className="burger-line"></span>
+                  <span className="burger-line"></span>
+                  <span className="burger-line"></span>
                 </div>
         <Navigation onClose={onClose} />
       </div>

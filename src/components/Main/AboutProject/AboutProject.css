@@ -2,7 +2,7 @@
     padding: 110px 70px;
 }
 
-.landing_title {
+.landing-title{
     font-style: normal;
     font-weight: 400;
     font-size: 22px;
@@ -25,7 +25,7 @@
     width: 550px;
 }
 
-.about__block_title {
+.about__block-title {
     margin: 0;
     font-style: normal;
     font-weight: 400;
@@ -34,7 +34,7 @@
     letter-spacing: -0.04em;
 }
 
-.about__block_text {
+.about__block-text {
     margin: 0;
     font-style: normal;
     font-weight: 400;

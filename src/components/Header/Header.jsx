@@ -16,15 +16,15 @@ function Header({ onMenuClick }) {
           Сохранённые фильмы
         </Link>
       </div>
-        <Link to="/profile" className="header__profile header__link">
-          <p className="header__link_profile">Аккаунт</p>
-          <img className="header__profile_img" alt="profile" src={profile} />
-        </Link>
-        <div className="header__burger" onClick={onMenuClick}>
-          <span className="header__burger_line"></span>
-          <span className="header__burger_line"></span>
-          <span className="header__burger_line"></span>
-        </div>
+      <Link to="/profile" className="header__profile header__link">
+        <p className="header__link-profile">Аккаунт</p>
+        <img className="header__profile-img" alt="profile" src={profile} />
+      </Link>
+      <div className="burger" onClick={onMenuClick}>
+        <span className="burger-line"></span>
+        <span className="burger-line"></span>
+        <span className="burger-line"></span>
+      </div>
     </header>
   );
 }

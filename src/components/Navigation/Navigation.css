@@ -28,14 +28,14 @@
     display: flex;
     justify-content: center;
     text-decoration: none;
-    margin: 250px 0 0 13px;
+    margin: 621px 0 0 13px;
   }
 
-  .navigation__profile_img{
+  .navigation__profile-img{
     margin-left:13px;
   }
 
-  .navigation__link_profile{
+  .navigation__link-profile{
     font-weight: 500;
     font-size: 18px;
     line-height: 22px;
@@ -45,7 +45,16 @@
     transition: opacity 0.3s;
   }
 
-  .navigation__link_profile:hover {
+  .navigation__link-profile:hover {
     border-bottom: solid 2px #000;
     opacity: 0.85;
+  }
+
+  
+
+  @media screen and (max-width: 520px) {
+
+    .navigation__profile{
+      margin: 444px 0 0 13px;
+    }
   }

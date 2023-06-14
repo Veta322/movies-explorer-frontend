@@ -8,11 +8,21 @@ function Profile() {
       <form className="profile__info">
         <div className="profile__elem">
           <p className="profile__type">Имя</p>
-          <input className="profile__mean" value="Вета" disabled></input>
+          <input
+            className="profile__mean"
+            value="Вета"
+            disabled
+            required
+          ></input>
         </div>
         <div className="profile__elem">
           <p className="profile__type">E-mail</p>
-          <input className="profile__mean" value="vetakomolova@yandex.ru" disabled></input>
+          <input
+            className="profile__mean"
+            value="vetakomolova@yandex.ru"
+            disabled
+            required
+          ></input>
         </div>
       </form>
       <Link to="/profile" className="profile__edit">

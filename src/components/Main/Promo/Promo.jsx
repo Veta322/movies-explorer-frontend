@@ -11,29 +11,30 @@ function Promo() {
           <Link to="/signup" className="promo__link" type="button">
             Регистрация
           </Link>
-          <Link to="/signin" className="promo__link promo__link_black" type="button">
+          <Link
+            to="/signin"
+            className="promo__link promo__link_black"
+            type="button"
+          >
             Войти
           </Link>
         </div>
       </header>
-      <main className="promo__content">
-        
-        <img className="promo__content_image" alt="web" src={web} />
+      <section className="promo__content">
+        <img className="promo__content-image" alt="web" src={web} />
         <div className="promo__text">
-          <h1 className="promo__text_tittle">
+          <h1 className="promo__text-tittle">
             Учебный проект студента факультета Веб-разработки.
           </h1>
-          <p className="promo__text_subtittle">
+          <p className="promo__text-subtittle">
             Листайте ниже, чтобы узнать больше про этот проект и&nbsp;его
             создателя.{" "}
           </p>
           <Link to="/movies">
-        <button className="promo__btn">Узнать больше</button>{" "}
-      </Link>
+            <button className="promo__btn">Узнать больше</button>{" "}
+          </Link>
         </div>
-      
-      </main>
-     
+      </section>
     </section>
   );
 }
