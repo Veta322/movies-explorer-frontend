@@ -17,6 +17,11 @@
   height: 38px;
   margin-right: 44px;
   cursor: pointer;
+  transition: all .3s;
+}
+
+.header__logo:hover {
+  transform: scale(1.1);
 }
 
 .header__profile {
@@ -33,6 +38,12 @@
   align-self: center;
   text-decoration: none;
   color: black;
+  transition: all .3s;
+}
+
+.header__profile {
+  display: flex;
+  align-items: center;
 }
 
 .header__link:nth-of-type(3) {
@@ -47,6 +58,10 @@
 
 .header__burger {
   display: none;
+}
+
+.header__link:hover{
+  transform: scale(1.1);
 }
 
 @media screen and (max-width: 768px) {

@@ -1,6 +1,4 @@
-
 import Navigation from "../Navigation/Navigation";
-
 
 function MenuPopup({ isOpen, onClose }) {
   return (

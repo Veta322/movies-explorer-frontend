@@ -16,7 +16,6 @@ function Navigation({ onClose }) {
 
       <Link to="/profile" className="navigation__profile" onClick={onClose}>
         <p className="navigation__link_profile">Аккаунт</p>
-
         <img className="navigation__profile_img" alt="profile" src={profile} />
       </Link>
     </div>

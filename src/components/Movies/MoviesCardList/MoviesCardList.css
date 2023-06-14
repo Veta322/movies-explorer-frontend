@@ -32,7 +32,7 @@
     .movies-list {
         grid-template-columns: 1fr 1fr;
         grid-template-rows: auto;
-        padding: 70px 30px 30px 30px;
+        padding: 70px 0 30px 0;
         row-gap: 35px;
         column-gap: 24px;
     }
@@ -43,7 +43,7 @@
     .movies-list {
         grid-template-columns: 1fr;
         grid-template-rows: auto;
-        padding: 40px 10px 30px 10px;
+        padding: 40px 0 30px 0;
         row-gap: 16px;
 
     }

@@ -5,6 +5,10 @@
     width: 360px;
     padding: 18px 0 0;
     font-style: normal;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    
 }
 
 .movie-card__header {
@@ -13,6 +17,7 @@
     justify-content: space-between;
     margin-bottom: 18px;
     padding: 0 14px;
+    
 }
 
 .movie-card__title {
@@ -48,7 +53,8 @@
     width: 100px;
     height: 30px;
     border: none;
-    margin: 18px 130px;
+    margin: 18px 0;
+    align-self: center;
 }
 
 .movie-card__btn_active {
@@ -58,7 +64,7 @@
 
 
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 984px) {
     .movie-card {
         width: 342px;
         padding: 18px 0 0;
@@ -69,7 +75,7 @@
     }
 }
 
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 568px) {
     .movie-card {
         width: 300px;
         padding: 14px 0 0;
