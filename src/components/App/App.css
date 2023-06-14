@@ -1,7 +1,8 @@
 .page{
   font-family: 'Inter', 'Arial', 'Helvetica', sans-serif;
   min-width: 320px;
-  max-width: 100vw; /*если указать в px будет некрасивая полоска*/
+  max-width: 1280px;
+  margin: 0 auto;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
