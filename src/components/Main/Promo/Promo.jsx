@@ -8,13 +8,12 @@ function Promo() {
         <header className="promo__header">
         <img className="promo__logo" alt="circle" src={circle} />
         <div className="promo__links">
-          <Link to="/signup" className="promo__link" type="button">
+          <Link to="/signup" className="promo__link">
             Регистрация
           </Link>
           <Link
             to="/signin"
             className="promo__link promo__link_black"
-            type="button"
           >
             Войти
           </Link>
@@ -28,10 +27,10 @@ function Promo() {
           </h1>
           <p className="promo__text-subtittle">
             Листайте ниже, чтобы узнать больше про этот проект и&nbsp;его
-            создателя.{" "}
+            создателя.
           </p>
-          <Link to="/movies">
-            <button className="promo__btn">Узнать больше</button>{" "}
+          <Link to="/movies" className="promo__btn">
+          Узнать больше
           </Link>
         </div>
       </section>
