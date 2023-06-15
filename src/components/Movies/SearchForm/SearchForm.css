@@ -15,16 +15,16 @@
     width: 932px;
 }
 
-.search__form_input {
+.search__form-input {
     border: none;
     width: 100%;
 }
 
-.search__form_input:focus {
+.search__form-input:focus {
     outline: none;
 }
 
-.search__form_btn {
+.search__form-btn {
     background-image: url("../../../images/find.svg");
     width: 34px;
     height: 34px;
@@ -38,7 +38,7 @@
 }
 
 
-.search__form_btn:hover{
+.search__form-btn:hover{
     transform: scale(1.1);
 }
 

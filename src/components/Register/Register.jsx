@@ -10,21 +10,21 @@ function Register() {
       </Link>
       <h2 className="regist__greeting">Добро пожаловать!</h2>
       <form className="regist__form">
-        <label className="regist__form_type">Имя</label>
+        <label className="regist__form-type">Имя</label>
         <input
-          className="regist__form_input"
+          className="regist__form-input"
           placeholder="Введите ваше имя"
           required
         ></input>
-        <label className="regist__form_type">E-mail</label>
+        <label className="regist__form-type">E-mail</label>
         <input
-          className="regist__form_input"
+          className="regist__form-input"
           placeholder="Введите ваш E-mail"
           required
         ></input>
-        <label className="regist__form_type">Пароль</label>
+        <label className="regist__form-type">Пароль</label>
         <input
-          className="regist__form_input"
+          className="regist__form-input"
           placeholder="Придумайте пароль"
           required
         ></input>

@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 function Promo() {
   return (
     <section className="promo">
-      <header className="promo__header">
+        <header className="promo__header">
         <img className="promo__logo" alt="circle" src={circle} />
         <div className="promo__links">
           <Link to="/signup" className="promo__link" type="button">
