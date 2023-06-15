@@ -17,7 +17,7 @@
 
 .profile__info {
     width: 410px;
-    margin-bottom: 220px;
+    margin: 0 auto 220px;
 }
 
 .profile__type {

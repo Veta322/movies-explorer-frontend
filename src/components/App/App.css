@@ -1,12 +1,12 @@
-.page{
+body {
   font-family: 'Inter', 'Arial', 'Helvetica', sans-serif;
   min-width: 320px;
   max-width: 1280px;
-  margin: 0 auto;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  justify-content: start;
+  margin: 0 auto;
+  font-weight: 400;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -14,3 +14,4 @@
   -ms-text-size-adjust: 100%;
   -moz-text-size-adjust: 100%;
 }
+

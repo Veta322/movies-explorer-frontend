@@ -9,8 +9,8 @@ function Movies(props) {
     <>
       <Header onMenuClick={props.onMenuClick} />
       <main className="movies">
-        <SearchForm />
-        <MoviesCardList />
+      <SearchForm />
+      <MoviesCardList />
       </main>
       <Footer />
     </>

@@ -5,7 +5,6 @@
     flex-direction: column;
     padding: 0 50px 75px 70px;
     border-radius: 15px;
-
 }
 
 .promo__header {
@@ -123,7 +122,7 @@
 
 
 
-@media screen and (max-width: 984px) {
+@media screen and (max-width: 1005px) {
     .promo {
         padding: 0;
     }
@@ -152,7 +151,7 @@
     .promo__text-tittle {
         font-size: 40px;
         line-height: 50px;
-        width: 100%;
+        
         text-align: center;
         margin: 48px 0 22px;
     }
@@ -162,7 +161,7 @@
         line-height: 16px;
         text-align: center;
         align-self: center;
-        width: 100%;
+        
 
     }
 
