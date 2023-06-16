@@ -1,6 +1,6 @@
 import MoviesCard from "../MoviesCard/MoviesCard";
 
-function MoviesCardList({ cards, isSavedFilms }) {
+function MoviesCardList() {
   return (
     <section className="movies-block">
       <div className="movies-list">
