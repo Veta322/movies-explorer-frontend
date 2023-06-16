@@ -28,7 +28,7 @@
 }
 
 
-@media screen and (max-width: 1152px) {
+@media screen and (max-width: 1170px) {
     .movies-list {
         grid-template-columns: 1fr 1fr;
         grid-template-rows: auto;
