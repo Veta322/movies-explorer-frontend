@@ -1,33 +1,34 @@
 @keyframes arrow {
-	0%,
-	100% {
-		transform: rotate(0deg);
-		transform-origin: 0 50%;
-	}
 
-	10% {
-		transform: rotate(2deg);
-	}
+    0%,
+    100% {
+        transform: rotate(0deg);
+        transform-origin: 0 50%;
+    }
 
-	20%,
-	40%,
-	60% {
-		transform: rotate(-4deg);
-	}
+    10% {
+        transform: rotate(2deg);
+    }
 
-	30%,
-	50%,
-	70% {
-		transform: rotate(4deg);
-	}
+    20%,
+    40%,
+    60% {
+        transform: rotate(-4deg);
+    }
 
-	80% {
-		transform: rotate(-2deg);
-	}
+    30%,
+    50%,
+    70% {
+        transform: rotate(4deg);
+    }
 
-	90% {
-		transform: rotate(2deg);
-	}
+    80% {
+        transform: rotate(-2deg);
+    }
+
+    90% {
+        transform: rotate(2deg);
+    }
 }
 
 .portfolio {
@@ -43,21 +44,28 @@
     mix-blend-mode: normal;
 }
 
-
+.portfolio__list {
+    padding: 0;
+}
 
 .portfolio__component {
-    display: flex;
-    justify-content: space-between;
+
+    list-style: none;
     border-bottom: 1px solid #E8E8E8;
     padding: 20px 0;
-    text-decoration: none;
-    color: black;
+
 }
 
 .portfolio__component:last-of-type {
     border-bottom: none;
 }
 
+.portfolio__link {
+    text-decoration: none;
+    color: black;
+    display: flex;
+    justify-content: space-between;
+}
 
 .portfolio__text {
     font-weight: 400;
@@ -68,7 +76,7 @@
     transition: all .3s;
 }
 
-.portfolio__text:hover{
+.portfolio__text:hover {
     transform: scale(1.1);
 }
 

@@ -42,23 +42,10 @@
     transform: scale(1.1);
 }
 
-<<<<<<< HEAD
-@media screen and (max-width: 1165px) {
-
-    .search__form {
-        width: 800px;
-    }
-}
-
-
-
-@media screen and (max-width: 984px) {
-=======
 
 
 
 @media screen and (max-width: 1170px) {
->>>>>>> 94c7c2d (scrolllllllll)
     .search{
         flex-direction: column;
     }

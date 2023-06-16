@@ -76,13 +76,7 @@
 }
 
 
-<<<<<<< HEAD
-
-
-@media screen and (max-width: 568px) {
-=======
 @media screen and (max-width: 750px) {
->>>>>>> 94c7c2d (scrolllllllll)
     .movie-card {
         width: 300px;
         padding: 14px 0 0;
