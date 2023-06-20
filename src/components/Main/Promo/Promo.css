@@ -1,0 +1,236 @@
+.promo {
+    background-color: #F3C1F8;
+    padding-bottom: 50px;
+    display: flex;
+    flex-direction: column;
+    padding: 0 50px 75px 70px;
+    border-radius: 15px;
+}
+
+.promo__header {
+    height: 74px;
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.promo__logo {
+    width: 38px;
+    height: 38px;
+    margin: 18px 0 18px 0;
+    transition: all .3s;
+    cursor: pointer;
+}
+
+.promo__logo:hover {
+    transform: scale(1.1);
+}
+
+.promo__links {
+    display: flex;
+    gap: 30px;
+    margin: 13px 0 13px 0;
+}
+
+.promo__link {
+    color: black;
+    text-decoration: none;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 16px;
+    align-self: center;
+    padding: 8px 0;
+    transition: all .3s;
+}
+
+.promo__link:hover {
+    transform: scale(1.1);
+}
+
+.promo__link_black {
+    color: white;
+    background: #000000;
+    border: 1px solid #000000;
+    border-radius: 3px;
+    padding: 8px 20px;
+}
+
+.promo__content {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row-reverse;
+}
+
+.promo__text {
+    display: flex;
+    flex-direction: column;
+}
+
+.promo__text-tittle {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 50px;
+    line-height: 58px;
+    width: 640px;
+    height: 174px;
+    margin: 75px 0 36px 0;
+}
+
+.promo__content-image {
+    width: 310px;
+    height: 304px;
+    margin-top: 75px;
+}
+
+.promo__text-subtittle {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 16px;
+    width: 310px;
+    height: 32px;
+    opacity: 0.5;
+    margin: 0;
+}
+
+.promo__btn {
+    width: 129px;
+    height: 36px;
+    border: 1px solid rgb(84, 84, 84, 0.6);
+    border-radius: 3px;
+    background: none;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 16px;
+    font-style: normal;
+    cursor: pointer;
+    margin-top: 156px;
+    text-decoration: none;
+    color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.promo__btn:hover {
+    color: white;
+    background: #000000;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    transition: 0.4s linear;
+}
+
+
+
+@media screen and (max-width: 1005px) {
+    .promo {
+        padding: 0;
+    }
+
+    .promo__header {
+        padding: 0px 30px;
+        justify-content: space-between;
+    }
+
+    .promo__content {
+        flex-direction: column;
+        padding: 0 44px;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .promo__content-image {
+        margin: 140px 185px 48px;
+    }
+
+    .promo__text {
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .promo__text-tittle {
+        font-size: 40px;
+        line-height: 50px;
+        
+        text-align: center;
+        margin: 48px 0 22px;
+    }
+
+    .promo__text-subtittle {
+        font-size: 13px;
+        line-height: 16px;
+        text-align: center;
+        align-self: center;
+        
+
+    }
+
+    .promo__btn {
+        margin: 92px auto 76px auto;
+        align-self: center;
+    }
+}
+
+@media screen and (max-width: 655px) {
+    .promo {
+        padding: 0 10px;
+    }
+
+    .promo__header {
+        padding: 0 4px;
+    }
+
+
+    .promo__links {
+        gap: 14px;
+        margin: 13px 0 13px 0;
+    }
+
+    .promo__link {
+        font-size: 10px;
+        line-height: 16px;
+    }
+
+    .promo__link_black {
+        padding: 5px 12px;
+    }
+
+    .promo__content {
+        padding: 0;
+    }
+
+    .promo__content-image {
+        width: 210px;
+        height: 206px;
+        margin: 70px 45px 44px;
+    }
+
+    .promo__text-tittle {
+        font-size: 30px;
+        line-height: 38px;
+        width: 300px;
+        margin: 0 0 24px;
+    }
+
+    .promo__text-subtittle {
+        font-size: 13px;
+        line-height: 16px;
+        text-align: center;
+        align-self: center;
+        width: 260px;
+        height: 32px;
+        margin: 24px 20px 0 20px;
+    }
+
+    .promo__btn {
+        margin: 80px 86px 30px 85px;
+    }
+}
+
+
+@media screen and (min-width: 1400px) {
+    .promo {
+        padding: 0 100px 70px 100px;
+    }
+
+}

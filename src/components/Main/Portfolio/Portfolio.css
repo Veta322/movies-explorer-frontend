@@ -1,0 +1,135 @@
+@keyframes arrow {
+
+    0%,
+    100% {
+        transform: rotate(0deg);
+        transform-origin: 0 50%;
+    }
+
+    10% {
+        transform: rotate(2deg);
+    }
+
+    20%,
+    40%,
+    60% {
+        transform: rotate(-4deg);
+    }
+
+    30%,
+    50%,
+    70% {
+        transform: rotate(4deg);
+    }
+
+    80% {
+        transform: rotate(-2deg);
+    }
+
+    90% {
+        transform: rotate(2deg);
+    }
+}
+
+.portfolio {
+    padding: 0 70px 125px 70px;
+    font-style: normal;
+}
+
+.portfolio__title {
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 20px;
+    color: #A0A0A0;
+    mix-blend-mode: normal;
+}
+
+.portfolio__list {
+    padding: 0;
+}
+
+.portfolio__component {
+
+    list-style: none;
+    border-bottom: 1px solid #E8E8E8;
+    padding: 20px 0;
+
+}
+
+.portfolio__component:last-of-type {
+    border-bottom: none;
+}
+
+.portfolio__link {
+    text-decoration: none;
+    color: black;
+    display: flex;
+    justify-content: space-between;
+}
+
+.portfolio__text {
+    font-weight: 400;
+    font-size: 30px;
+    line-height: 50px;
+    letter-spacing: -0.04em;
+    margin: 0;
+    transition: all .3s;
+}
+
+.portfolio__text:hover {
+    transform: scale(1.1);
+}
+
+.portfolio__arrow {
+    width: 30px;
+    height: 60px;
+    font-weight: 400;
+    font-size: 30px;
+    line-height: 60px;
+    letter-spacing: -0.04em;
+    margin: 0;
+    animation: arrow 2s ease 0s infinite normal forwards;
+}
+
+@media screen and (max-width: 768px) {
+    .portfolio {
+        padding: 0 50px 90px 50px;
+    }
+
+    .portfolio__title {
+        font-size: 18px;
+        line-height: 20px;
+    }
+
+    .portfolio__text {
+        font-size: 28px;
+        line-height: 50px;
+    }
+
+}
+
+@media screen and (max-width: 568px) {
+    .portfolio {
+        padding: 0 14px 70px 14px;
+    }
+
+    .portfolio__title {
+        font-size: 14px;
+        line-height: 20px;
+    }
+
+
+
+    .portfolio__text {
+        font-size: 18px;
+        line-height: 28px;
+    }
+
+    .portfolio__arrow {
+        width: 18px;
+        height: 28px;
+        font-size: 18px;
+        line-height: 28px;
+    }
+
+}
