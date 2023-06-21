@@ -26,8 +26,7 @@ function Login({ onAuthorize, isLoading }) {
       onSubmit={handleSubmit}
       isDisabled={!isFormValid}
       isLoading={isLoading}>
-      <label className="form__field">
-        E-mail
+      <label className="form__type">Email</label>
         <input
           name="email"
           className="form__input"
@@ -39,9 +38,8 @@ function Login({ onAuthorize, isLoading }) {
           value={enteredValues.email || ''}
         />
         <span className="form__input-error">{errors.email}</span>
-      </label>
-      <label className="form__field">
-        Пароль
+   
+        <label className="form__type">Пароль</label>
         <input
           name="password"
           className="form__input"
@@ -52,7 +50,7 @@ function Login({ onAuthorize, isLoading }) {
           value={enteredValues.password || ''}
         />
         <span className="form__input-error">{errors.password}</span>
-      </label>
+     
     </Form>
   );
 }

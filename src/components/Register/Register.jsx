@@ -1,3 +1,4 @@
+
 import React from "react";
 
 import Form from '../Form/Form';
@@ -17,6 +18,7 @@ function Register({ onRegister, isLoading }) {
   }
   return (
     <Form
+    
     title="Добро пожаловать!"
     buttonText="Зарегистрироваться"
     question="Уже зарегистрированы?"
@@ -25,10 +27,10 @@ function Register({ onRegister, isLoading }) {
     onSubmit={handleSubmit}
     isDisabled={!isFormValid}
     isLoading={isLoading}>
-        <label className="regist__form-type">Имя</label>
+        <label className="form__type">Имя</label>
         <input
         name="name"
-          className="regist__form-input"
+          className="form__input"
           placeholder="Введите ваше имя"
           id="name-input"
           type="text"
@@ -38,12 +40,13 @@ function Register({ onRegister, isLoading }) {
           onChange={handleChange}
           value={enteredValues.name || ''}
           pattern={USER_NAME_REGEX}
-        ></input>
-        <span className="form__input-error">{errors.password}</span>
-        <label className="regist__form-type">E-mail</label>
+        />
+        <span className="form__input-error">{errors.name}</span>
+
+        <label className="form__type">E-mail</label>
         <input
          name="email"
-          className="regist__form-input"
+          className="form__input"
           placeholder="Введите ваш E-mail"
           id="email-input"
           type="email"
@@ -51,19 +54,20 @@ function Register({ onRegister, isLoading }) {
           onChange={handleChange}
           pattern={EMAIL_REGEX}
           value={enteredValues.email || ''}
-        ></input>
-        <span className="form__input-error">{errors.password}</span>
-        <label className="regist__form-type">Пароль</label>
+        />
+        <span className="form__input-error">{errors.email}</span>
+
+        <label className="form__type">Пароль</label>
         <input
          name="password"
-          className="regist__form-input"
+          className="form__input"
           placeholder="Придумайте пароль"
           id="password-input"
           type="password"
           required
           onChange={handleChange}
           value={enteredValues.password || ''}
-        ></input>
+        />
         <span className="form__input-error">{errors.password}</span>
       </Form>
   );

@@ -1,21 +1,20 @@
 import MoviesCard from "../MoviesCard/MoviesCard";
+import Preloader from "../../Preloader/Preloader";
+import SearchError from "../../SearchError/SearchError";
 import React, { useEffect, useState } from 'react';
-import { useLocation } from 'react-router-dom';
 import { SHOW_MORE_DECKTOP, SHOW_MORE_TABLET, SHOW_MORE_MOBILE } from '../../utils/constants';
 
 
 function MoviesCardList({
   cards,
-  isSavedFilms,
-  isLoading,
-  isReqErr,
-  isNotFound,
   handleLikeClick,
   savedMovies,
   onCardDelete,
+  isLoading,
+  isReqErr,
+  isNotFound,
 }) {
   const [shownMovies, setShownMovies] = useState(0);
-  const { pathname } = useLocation();
 
   function shownCount() {
     const display = window.innerWidth;
@@ -52,47 +51,43 @@ function MoviesCardList({
     }
   }
 
-  function getSavedMovieCard(savedMovies, card) {
-    return savedMovies.find((savedMovie) => savedMovie.movieId === card.id);
+  function onDelete(card) {
+      onCardDelete(getSavedCard(card)._id)
   }
+
+  // Возвращает сохраненную карточку
+  function getSavedCard(card) {
+    return savedMovies.find((savedMovie) => savedMovie.movieId === card.id.toString());
+  }
+
+  // Возвращает true, если card - сохраненный фильм, иначе false
+  function isCardSaved(card) {
+    return savedMovies.some((savedMovie) => savedMovie.movieId === card.id.toString());
+  }
+
 
   return (
     <section className="movies">
-   
-      {!isLoading && !isReqErr && !isNotFound && (
-        <>
-          {pathname === '/saved-movies' ? (
-           <section className="movies-block">
-              <ul className="movies-list">
-                {cards.map((card) => (
-                  <MoviesCard
-                    key={isSavedFilms ? card._id : card.id}
-                    saved={getSavedMovieCard(savedMovies, card)}
-                    cards={cards}
-                    card={card}
-                    isSavedFilms={isSavedFilms}
-                    handleLikeClick={handleLikeClick}
-                    onCardDelete={onCardDelete}
-                    savedMovies={savedMovies}
-                  />
-                ))}
-              </ul>
-              
-              </section>
-          ) : (
-            
-             <section className="movies-block">
+      {isLoading && <Preloader />} 
+      {!isLoading && isNotFound && <SearchError errorText={'Ничего не найдено ┐(シ)┌'} />}
+      {!isLoading && isReqErr &&(
+        <SearchError
+          errorText={
+            'Произошла ошибка на сервере :('
+          }
+        />
+      )}
+      
+      {!isLoading && !isNotFound && !isReqErr && (
+             <div className="movies-block">
               <ul className="movies-list">
                 {cards.slice(0, shownMovies).map((card) => (
                   <MoviesCard
-                    key={isSavedFilms ? card._id : card.id}
-                    saved={getSavedMovieCard(savedMovies, card)}
-                    cards={cards}
+                    key={card.id}
+                    saved={isCardSaved(card)}
                     card={card}
-                    isSavedFilms={isSavedFilms}
                     handleLikeClick={handleLikeClick}
-                    onCardDelete={onCardDelete}
-                    savedMovies={savedMovies}
+                    onCardDelete={onDelete}
                   />
                 ))}
               </ul>
@@ -103,11 +98,8 @@ function MoviesCardList({
                 ) : (
                   ''
                 )}
-             
-             </section>
-          )}
-        </>
-      )}
+             </div>
+             )}
     </section>
   );
 }

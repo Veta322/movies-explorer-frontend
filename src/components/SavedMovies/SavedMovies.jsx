@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import SearchForm from "../Movies/SearchForm/SearchForm";
-import MoviesCardList from "../Movies/MoviesCardList/MoviesCardList";
+import SavedMoviesCardList from "../SavedMovies/SavedMoviesList/SavedMoviesCardList";
 import Footer from "../Footer/Footer";
 import Header from "../Header/Header";
 import { filterMovies, filterDuration } from '../utils/utils';
@@ -13,6 +13,7 @@ function SavedMovies({ isLoggedIn, savedMovies, onCardDelete,onMenuClick }) {
 
   function onSearchMovies(query) {
     setSearchQuery(query);
+
   }
 
   function handleShortMovies() {
@@ -37,12 +38,11 @@ function SavedMovies({ isLoggedIn, savedMovies, onCardDelete,onMenuClick }) {
       <Header  isLoggedIn={isLoggedIn} onMenuClick={onMenuClick} />
       <main className="movies">
       <SearchForm onSearchMovies={onSearchMovies} onFilter={handleShortMovies} />
-      <MoviesCardList
-        isNotFound={isNotFound}
-        isSavedFilms={true}
+      <SavedMoviesCardList
         cards={filteredMovies}
-        savedMovies={savedMovies}
         onCardDelete={onCardDelete}
+        isNotFound={isNotFound}
+      
       />
       </main>
       <Footer />

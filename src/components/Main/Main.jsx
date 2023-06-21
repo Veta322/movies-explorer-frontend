@@ -6,10 +6,10 @@ import AboutMe from "./AboutMe/AboutMe";
 import Portfolio from "./Portfolio/Portfolio";
 
 
-function Main() {
+function Main({ isLoggedIn }) {
   return (
     <main className="main">
-      <Promo />
+      <Promo isLoggedIn = { isLoggedIn } />
       <AboutProject />
       <Techs />
       <AboutMe />

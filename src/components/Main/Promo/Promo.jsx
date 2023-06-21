@@ -1,11 +1,9 @@
-import circle from "../../../images/circle.svg";
 import web from "../../../images/promo_img.svg";
 import { Link } from "react-router-dom";
 
-function Promo() {
+function Promo({ isLoggedIn }) {
   return (
     <section className="promo">
-    
       <section className="promo__content">
         <img className="promo__content-image" alt="web" src={web} />
         <div className="promo__text">
@@ -16,9 +14,15 @@ function Promo() {
             Листайте ниже, чтобы узнать больше про этот проект и&nbsp;его
             создателя.
           </p>
-          <Link to="/movies" className="promo__btn">
-          Узнать больше
-          </Link>
+          {isLoggedIn ? (
+            <Link to="/movies" className="promo__btn">
+              Узнать больше
+            </Link>
+          ) : (
+            <Link to="/signin" className="promo__btn">
+              Узнать больше
+            </Link>
+          )}
         </div>
       </section>
     </section>

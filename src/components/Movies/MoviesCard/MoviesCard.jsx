@@ -1,23 +1,19 @@
-import React from 'react';
-import { durationConverter } from '../../utils/utils';
+import React from "react";
+import { durationConverter } from "../../utils/utils";
 
-function MoviesCard({ card, isSavedFilms, handleLikeClick, onCardDelete, saved, savedMovies }) {
+function MoviesCard({
+  card,
+  handleLikeClick,
+  onCardDelete,
+  saved
+}) {
   function onCardClick() {
-    if (saved) {
-      onCardDelete(savedMovies.filter((m) => m.movieId === card.id)[0]);
-    } else {
-      handleLikeClick(card);
-    }
+    handleLikeClick(card);
   }
 
   function onDelete() {
     onCardDelete(card);
   }
-
-  const cardSaveButtonClassName = `${
-    saved ? 'movie-card__btn movie-card__btn_active' : 'movie-card__btn'
-  }`;
-
 
   return (
     <li className="movie-card">
@@ -26,17 +22,27 @@ function MoviesCard({ card, isSavedFilms, handleLikeClick, onCardDelete, saved, 
         <p className="movie-card__time">{durationConverter(card.duration)}</p>
       </div>
       <a href={card.trailerLink} target="_blank" rel="noreferrer">
-      <img className="movie-card__img" alt="movie" src={isSavedFilms ? card.image : `https://api.nomoreparties.co/${card.image.url}`} />
+        <img
+          className="movie-card__img"
+          alt="movie"
+          src={`https://api.nomoreparties.co/${card.image.url}`}
+        />
       </a>
-      {isSavedFilms ? (
-          <button type="button" className="movie-card__btn" onClick={onDelete}>✖</button>
-        ) : (
-          <button type="button" className={cardSaveButtonClassName} onClick={onCardClick}>Сохранить</button>
-        )}
+      {saved ? (
+        <button
+          type="button"
+          className="movie-card__btn movie-card__btn_active"
+          onClick={onDelete}
+        >
+          ✓
+        </button>
+      ) : (
+        <button type="button" className="movie-card__btn" onClick={onCardClick}>
+          Сохранить
+        </button>
+      )}
     </li>
   );
 }
 
 export default MoviesCard;
-
-

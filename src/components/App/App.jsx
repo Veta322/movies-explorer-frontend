@@ -139,8 +139,8 @@ function App() {
   function handleCardLike(card) {
     api
       .postCard(card)
-      .then((newMovie) => {
-        setSavedMovies([newMovie, ...savedMovies]);
+      .then((result) => {
+        setSavedMovies([result.movie].concat(savedMovies));
       })
       .catch((err) => {
         console.log(err);
@@ -148,12 +148,12 @@ function App() {
       });
   }
 
-  function handleCardDelete(card) {
+  function handleCardDelete(cardId) {
     api
-      .deleteCard(card._id)
+      .deleteCard(cardId)
       .then(() => {
         setSavedMovies((state) =>
-          state.filter((item) => item._id !== card._id)
+          state.filter((item) => item._id !== cardId)
         );
       })
       .catch((err) => {
@@ -188,7 +188,7 @@ function App() {
             element={
               <>
                 <Header isLoggedIn={isLoggedIn}  onMenuClick={handleIsMenuPopupOpen}/>
-                <Main />
+                <Main  isLoggedIn={isLoggedIn}  />
                 <Footer />
               </>
             }
@@ -229,6 +229,7 @@ function App() {
                 onCardDelete={handleCardDelete}
                 handleLikeClick={handleCardLike}
                 onMenuClick={handleIsMenuPopupOpen}
+
               />
             }
           />
