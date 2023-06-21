@@ -58,6 +58,8 @@
     text-decoration: none;
     color: black;
     transition: all .3s;
+    background: none;
+    border: none;
 }
 
 .profile__edit:hover{
@@ -72,6 +74,8 @@
     color: #FF4062;
     text-decoration: none;
     transition: all .3s;
+    background: none;
+    border: none;
 }
 
 .profile__logout:hover{

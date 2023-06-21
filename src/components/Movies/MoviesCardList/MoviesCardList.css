@@ -8,8 +8,8 @@
 
 .movies-list {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: auto;
+    grid-template-columns: repeat(3, 1fr);
+    
     padding: 70px 0;
     row-gap: 32px;
     column-gap: 32px;
@@ -30,8 +30,8 @@
 
 @media screen and (max-width: 1170px) {
     .movies-list {
-        grid-template-columns: 1fr 1fr;
-        grid-template-rows: auto;
+        grid-template-columns: repeat(2, 1fr);
+    
         padding: 70px 0 30px 0;
         row-gap: 35px;
         column-gap: 24px;
@@ -53,7 +53,6 @@
 @media screen and (max-width: 714px) {
     .movies-list {
         grid-template-columns: 1fr;
-        grid-template-rows: auto;
         padding: 40px 0 30px 0;
         row-gap: 16px;
 
