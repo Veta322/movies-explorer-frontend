@@ -15,6 +15,10 @@ export function durationConverter(duration) {
 
 }
 
+export function filterDuration(movies) {
+  return movies.filter((movie) => movie.duration < SHORTS);
+}
+
 export function filterMovies(movies, query) {
   const moviesByQuery = movies.filter((movie) => {
     const movieRu = String(movie.nameRU).toLowerCase().trim();
@@ -25,7 +29,4 @@ export function filterMovies(movies, query) {
   return moviesByQuery;
 }
 
-export function filterDuration(movies) {
-  return movies.filter((movie) => movie.duration < SHORTS);
-}
 
