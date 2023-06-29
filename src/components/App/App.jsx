@@ -22,6 +22,7 @@ import MenuPopup from "../MenuPopup/MenuPopup";
 import SavedMovies from "../SavedMovies/SavedMovies";
 import Footer from "../Footer/Footer";
 import NotFound from "../NotFound/NotFound";
+import InfoTooltip from '../InfoTooltip/InfoTooltip';
 
 function App() {
   const navigate = useNavigate();
@@ -31,6 +32,8 @@ function App() {
   const [currentUser, setCurrentUser] = useState({});
   const [savedMovies, setSavedMovies] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
+  const [isSuccess, setIsSuccess] = useState(true);
+  const [isUpdate, setIsUpdate] = useState(false);
   const path = location.pathname;
 
   
@@ -40,6 +43,8 @@ function App() {
 
   function closeAllPopups() {
     setIsMenuPopupOpen(false);
+    setIsSuccess(true);
+    setIsUpdate(false);
   }
 
 
@@ -62,14 +67,12 @@ function App() {
   }, []);
 
   useEffect(() => {
-    console.log("5");
     if (isLoggedIn) {
-      console.log("6");
       api
         .getUserInfo()
         .then((profileInfo) => {
           setCurrentUser(profileInfo);
-          console.log("7");
+        
         })
         .catch((err) => {
           console.log(err);
@@ -84,7 +87,7 @@ function App() {
           console.log(err);
         });
     }
-  }, [isLoggedIn, navigate]);
+  }, [isLoggedIn]);
 
 
   function handleRegister({ name, email, password }) {
@@ -126,10 +129,12 @@ function App() {
       .setUserInfo(newUserInfo)
       .then((data) => {
         setCurrentUser(data);
+        setIsUpdate(true);
       })
       .catch((err) => {
         console.log(err);
         handleUnauthorized(err);
+        setIsSuccess(false);
       })
       .finally(() => {
         setIsLoading(false);
@@ -267,6 +272,8 @@ function App() {
           isOpen={isMenuPopupOpen}
           onClose={closeAllPopups}
         ></MenuPopup>
+        <InfoTooltip isSuccess={isSuccess} onClose={closeAllPopups} />
+          <InfoTooltip isSuccess={!isUpdate} isUpdate={isUpdate} onClose={closeAllPopups} />
       </div>
     </CurrentUserContext.Provider>
   );

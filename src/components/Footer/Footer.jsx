@@ -5,8 +5,8 @@ function Footer() {
         <div className="footer__description">
             <p className="footer__elem  footer__gh">@ {(new Date().getFullYear())}</p>
             <div className="footer__source">
-                <p className="footer__elem">Яндекс.Практикум</p>
-                <p className="footer__elem">Github</p>
+                <a className="footer__elem" href="https://practicum.yandex.ru/" target="blanck">Яндекс.Практикум</a>
+                <a className="footer__elem" href="https://github.com/Veta322" target="blanck">Github</a>
             </div>
             </div>      
         </footer>

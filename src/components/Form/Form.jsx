@@ -26,7 +26,7 @@ function Form({
           disabled={isDisabled ? true : false}
           className={
             isDisabled || isLoading
-              ? 'form__button-save form__button-save_inactive'
+              ? 'form__button-save form__button-disabled'
               : 'form__button-save'
           }>
           {buttonText}

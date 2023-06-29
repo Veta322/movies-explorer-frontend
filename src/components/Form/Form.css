@@ -114,7 +114,7 @@
   opacity: 0.8;
 }
 
-.form__button-save_inactive {
+.form__button-disabled {
   pointer-events: none;
   background: #ffffff;
   border: 1px solid #000000;

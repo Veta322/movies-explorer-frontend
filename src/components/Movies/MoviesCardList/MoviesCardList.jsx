@@ -2,7 +2,7 @@ import MoviesCard from "../MoviesCard/MoviesCard";
 import Preloader from "../../Preloader/Preloader";
 import SearchError from "../../SearchError/SearchError";
 import React, { useEffect, useState } from 'react';
-import { SHOW_MORE_DECKTOP, SHOW_MORE_TABLET, SHOW_MORE_MOBILE } from '../../utils/constants';
+import { SHOW_MORE_DECKTOP, SHOW_MORE_TABLET, SHOW_MORE_MOBILE,DISPLAY_TABLET,DISPLAY_DECKTOP } from '../../utils/constants';
 
 
 function MoviesCardList({
@@ -18,13 +18,11 @@ function MoviesCardList({
 
   function shownCount() {
     const display = window.innerWidth;
-    if (display > 1180) {
-      setShownMovies(16);
-    } else if (display > 1023) {
+    if (display > DISPLAY_DECKTOP) {
       setShownMovies(12);
-    } else if (display > 800) {
+    } else if (display >= DISPLAY_TABLET) {
       setShownMovies(8);
-    } else if (display < 800) {
+    } else if (display < DISPLAY_TABLET) {
       setShownMovies(5);
     }
   }
@@ -41,12 +39,12 @@ function MoviesCardList({
 
   function showMore() {
     const display = window.innerWidth;
-    if (display > 1180) {
+    if (display > DISPLAY_DECKTOP) {
       setShownMovies(shownMovies + SHOW_MORE_DECKTOP);
-    } else if (display > 1023) {
+    } else if (display >= DISPLAY_TABLET) {
       setShownMovies(shownMovies + SHOW_MORE_TABLET);
     }
-    else if (display < 1023) {
+    else if (display < DISPLAY_TABLET) {
       setShownMovies(shownMovies + SHOW_MORE_MOBILE);
     }
   }

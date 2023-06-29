@@ -18,7 +18,6 @@ function Register({ onRegister, isLoading }) {
   }
   return (
     <Form
-    
     title="Добро пожаловать!"
     buttonText="Зарегистрироваться"
     question="Уже зарегистрированы?"

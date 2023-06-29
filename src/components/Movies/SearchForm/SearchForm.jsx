@@ -1,9 +1,11 @@
 import FilterCheckbox from "../../FilterCheckbox/FilterCheckbox";
-import React, { useState } from "react";
-
+import React, { useEffect, useState } from "react";
+import { useLocation } from "react-router-dom";
 
 function SearchForm({ onSearchMovies, onFilter, isShortMovies }) {
+  const location = useLocation();
   const [query, setQuery] = useState("");
+  
   function handleChangeQuery(e) {
     setQuery(e.target.value);
   }
@@ -15,6 +17,17 @@ function SearchForm({ onSearchMovies, onFilter, isShortMovies }) {
       onSearchMovies(query);
     }
   }
+
+  useEffect(() => {
+    if (
+      location.pathname === "/movies" &&
+      localStorage.getItem("movieSearch")
+    ) {
+      const localQuery = localStorage.getItem("movieSearch");
+      setQuery(localQuery);
+    }
+  }, [location]);
+
   return (
     <div className="search">
       <form className="search__form" id="form" onSubmit={handleSubmit}>

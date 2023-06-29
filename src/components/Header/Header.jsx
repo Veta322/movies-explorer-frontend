@@ -4,9 +4,6 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 function Header({ isLoggedIn, onMenuClick }) {
-
-
-  console.log('header', isLoggedIn);
   return (
     <>
       {!isLoggedIn ? (
