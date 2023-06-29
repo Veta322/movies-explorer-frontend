@@ -1,7 +1,7 @@
 import React, { useEffect, useContext } from "react";
 import CurrentUserContext from "../../contexts/CurrentUserContext";
-import useForm from "../hooks/useForm";
-import { EMAIL_REGEX, USER_NAME_REGEX } from "../utils/constants";
+import useForm from "../../hooks/useForm";
+import { EMAIL_REGEX, USER_NAME_REGEX } from "../../utils/constants";
 import Header from "../Header/Header";
 
 function Profile({
@@ -9,12 +9,12 @@ function Profile({
   onUpdateUser,
   isLoggedIn,
   onMenuClick,
-  isLoading
+  isLoading,
 }) {
   const currentUser = useContext(CurrentUserContext);
 
-  const { enteredValues, errors, handleChange, isFormValid, resetForm } = useForm();
- 
+  const { enteredValues, errors, handleChange, isFormValid, resetForm } =
+    useForm();
 
   useEffect(() => {
     if (currentUser) {
@@ -29,8 +29,6 @@ function Profile({
       email: enteredValues.email,
     });
   }
-
-
 
   return (
     <>
@@ -75,20 +73,22 @@ function Profile({
           <span className="profile__input-error">{errors.email}</span>
         </form>
 
-        <div className={
-          onUpdateUser
-         ? "profile__status"
-         : "profile__status  profile__status-active"
-        }>
-        <h2 className="profile__status-text">Профиль успешо обновлен</h2>
-      </div>
+        <div
+          className={
+            onUpdateUser
+              ? "profile__status"
+              : "profile__status  profile__status-active"
+          }
+        >
+          <h2 className="profile__status-text">Профиль успешо обновлен</h2>
+        </div>
 
         <button
           type="submit"
           className={
-            !isFormValid || isLoading 
-              ? 'profile__edit profile__edit-disabled'
-              : 'profile__edit'
+            !isFormValid || isLoading
+              ? "profile__edit profile__edit-disabled"
+              : "profile__edit"
           }
           onClick={handleSubmit}
           disabled={!isFormValid ? true : false}

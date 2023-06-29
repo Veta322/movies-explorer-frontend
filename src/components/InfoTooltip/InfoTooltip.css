@@ -14,7 +14,7 @@
   transition: visibility 0.2s, opacity 0.2s linear;
 }
 
-.popup_opened {
+.popup_open {
   visibility: visible;
   opacity: 1;
   transition: opacity 1s, visibility 1s;

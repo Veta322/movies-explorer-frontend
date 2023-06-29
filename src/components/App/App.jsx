@@ -8,8 +8,7 @@ import {
 } from "react-router-dom";
 
 import CurrentUserContext from "../../contexts/CurrentUserContext";
-import * as api from "../utils/MainApi";
-
+import * as api from "../../utils/MainApi";
 
 import ProtectedRoute from "../ProtectedRoute/ProtectedRoute";
 import Main from "../Main/Main";
@@ -22,7 +21,7 @@ import MenuPopup from "../MenuPopup/MenuPopup";
 import SavedMovies from "../SavedMovies/SavedMovies";
 import Footer from "../Footer/Footer";
 import NotFound from "../NotFound/NotFound";
-import InfoTooltip from '../InfoTooltip/InfoTooltip';
+import InfoTooltip from "../InfoTooltip/InfoTooltip";
 
 function App() {
   const navigate = useNavigate();
@@ -32,21 +31,17 @@ function App() {
   const [currentUser, setCurrentUser] = useState({});
   const [savedMovies, setSavedMovies] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
-  const [isSuccess, setIsSuccess] = useState(true);
   const [isUpdate, setIsUpdate] = useState(false);
   const path = location.pathname;
 
-  
   function handleIsMenuPopupOpen() {
     setIsMenuPopupOpen(true);
   }
 
   function closeAllPopups() {
     setIsMenuPopupOpen(false);
-    setIsSuccess(true);
     setIsUpdate(false);
   }
-
 
   useEffect(() => {
     const jwt = localStorage.getItem("jwt");
@@ -72,7 +67,6 @@ function App() {
         .getUserInfo()
         .then((profileInfo) => {
           setCurrentUser(profileInfo);
-        
         })
         .catch((err) => {
           console.log(err);
@@ -89,7 +83,6 @@ function App() {
     }
   }, [isLoggedIn]);
 
-
   function handleRegister({ name, email, password }) {
     api
       .register(name, email, password)
@@ -101,7 +94,6 @@ function App() {
       });
   }
 
-
   function handleAuthorize({ email, password }) {
     setIsLoading(true);
     api
@@ -112,7 +104,6 @@ function App() {
           localStorage.setItem("jwt", res.token);
           navigate("/movies");
         } else {
-          
         }
       })
       .catch((err) => {
@@ -134,7 +125,6 @@ function App() {
       .catch((err) => {
         console.log(err);
         handleUnauthorized(err);
-        setIsSuccess(false);
       })
       .finally(() => {
         setIsLoading(false);
@@ -157,9 +147,7 @@ function App() {
     api
       .deleteCard(cardId)
       .then(() => {
-        setSavedMovies((state) =>
-          state.filter((item) => item._id !== cardId)
-        );
+        setSavedMovies((state) => state.filter((item) => item._id !== cardId));
       })
       .catch((err) => {
         console.log(err);
@@ -183,7 +171,6 @@ function App() {
     navigate("/");
   };
 
-
   return (
     <CurrentUserContext.Provider value={currentUser}>
       <div className="page">
@@ -192,8 +179,11 @@ function App() {
             path="/"
             element={
               <>
-                <Header isLoggedIn={isLoggedIn}  onMenuClick={handleIsMenuPopupOpen}/>
-                <Main  isLoggedIn={isLoggedIn}  />
+                <Header
+                  isLoggedIn={isLoggedIn}
+                  onMenuClick={handleIsMenuPopupOpen}
+                />
+                <Main isLoggedIn={isLoggedIn} />
                 <Footer />
               </>
             }
@@ -224,7 +214,6 @@ function App() {
             }
           />
           <Route
-           
             path="/movies"
             element={
               <ProtectedRoute
@@ -234,7 +223,6 @@ function App() {
                 onCardDelete={handleCardDelete}
                 handleLikeClick={handleCardLike}
                 onMenuClick={handleIsMenuPopupOpen}
-
               />
             }
           />
@@ -272,8 +260,11 @@ function App() {
           isOpen={isMenuPopupOpen}
           onClose={closeAllPopups}
         ></MenuPopup>
-        <InfoTooltip isSuccess={isSuccess} onClose={closeAllPopups} />
-          <InfoTooltip isSuccess={!isUpdate} isUpdate={isUpdate} onClose={closeAllPopups} />
+        <InfoTooltip
+          isSuccess={!isUpdate}
+          isUpdate={isUpdate}
+          onClose={closeAllPopups}
+        />
       </div>
     </CurrentUserContext.Provider>
   );

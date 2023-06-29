@@ -1,5 +1,5 @@
 import React from "react";
-import { durationConverter } from "../../utils/utils";
+import { durationConverter } from "../../../utils/utils";
 
 function MoviesCard({
   card,

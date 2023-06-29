@@ -1,19 +1,18 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from "react";
 import SearchForm from "../Movies/SearchForm/SearchForm";
 import SavedMoviesCardList from "../SavedMovies/SavedMoviesList/SavedMoviesCardList";
 import Footer from "../Footer/Footer";
 import Header from "../Header/Header";
-import { filterMovies, filterDuration } from '../utils/utils';
+import { filterMovies, filterDuration } from "../../utils/utils";
 
-function SavedMovies({ isLoggedIn, savedMovies, onCardDelete,onMenuClick }) {
+function SavedMovies({ isLoggedIn, savedMovies, onCardDelete, onMenuClick }) {
   const [filteredMovies, setFilteredMovies] = useState(savedMovies);
   const [isShortMovies, setIsShortMovies] = useState(false);
-  const [isNotFound, setIsNotFound] = useState(false); 
-  const [searchQuery, setSearchQuery] = useState('');
+  const [isNotFound, setIsNotFound] = useState(false);
+  const [searchQuery, setSearchQuery] = useState("");
 
   function onSearchMovies(query) {
     setSearchQuery(query);
-
   }
 
   function handleShortMovies() {
@@ -35,15 +34,17 @@ function SavedMovies({ isLoggedIn, savedMovies, onCardDelete,onMenuClick }) {
 
   return (
     <>
-      <Header  isLoggedIn={isLoggedIn} onMenuClick={onMenuClick} />
+      <Header isLoggedIn={isLoggedIn} onMenuClick={onMenuClick} />
       <main className="movies">
-      <SearchForm onSearchMovies={onSearchMovies} onFilter={handleShortMovies} />
-      <SavedMoviesCardList
-        cards={filteredMovies}
-        onCardDelete={onCardDelete}
-        isNotFound={isNotFound}
-      
-      />
+        <SearchForm
+          onSearchMovies={onSearchMovies}
+          onFilter={handleShortMovies}
+        />
+        <SavedMoviesCardList
+          cards={filteredMovies}
+          onCardDelete={onCardDelete}
+          isNotFound={isNotFound}
+        />
       </main>
       <Footer />
     </>

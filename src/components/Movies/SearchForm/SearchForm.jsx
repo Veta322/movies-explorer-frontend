@@ -5,7 +5,7 @@ import { useLocation } from "react-router-dom";
 function SearchForm({ onSearchMovies, onFilter, isShortMovies }) {
   const location = useLocation();
   const [query, setQuery] = useState("");
-  
+
   function handleChangeQuery(e) {
     setQuery(e.target.value);
   }

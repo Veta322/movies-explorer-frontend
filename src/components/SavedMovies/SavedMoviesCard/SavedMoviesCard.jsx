@@ -1,11 +1,10 @@
 import React from "react";
-import { durationConverter } from "../../utils/utils";
+import { durationConverter } from "../../../utils/utils";
 
-function MoviesCard({ card, isSavedFilms, onCardDelete }) {
+function MoviesCard({ card, onCardDelete }) {
   function onDelete() {
     onCardDelete(card._id);
   }
-
   return (
     <li className="movie-card">
       <div className="movie-card__header">

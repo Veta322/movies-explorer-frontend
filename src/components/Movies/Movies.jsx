@@ -2,9 +2,9 @@ import SearchForm from "./SearchForm/SearchForm";
 import MoviesCardList from "./MoviesCardList/MoviesCardList";
 import Footer from "../Footer/Footer";
 import Header from "../Header/Header";
-import { filterMovies, filterDuration } from "../utils/utils";
+import { filterMovies, filterDuration } from "../../utils/utils";
 import React, { useState, useEffect } from "react";
-import * as movies from "../utils/MoviesApi";
+import * as movies from "../../utils/MoviesApi";
 
 function Movies({
   isLoggedIn,
@@ -19,7 +19,6 @@ function Movies({
   const [isShortMovies, setIsShortMovies] = useState(false);
   const [initialMovies, setInitialMovies] = useState([]);
   const [filteredMovies, setFilteredMovies] = useState([]);
- 
 
   function handleFilterMovies(movies, query, short) {
     const moviesList = filterMovies(movies, query, short);
@@ -72,7 +71,7 @@ function Movies({
   }
 
   useEffect(() => {
-    if (localStorage.getItem('movieSearch')) {
+    if (localStorage.getItem("movieSearch")) {
       if (filteredMovies.length === 0) {
         setIsNotFound(true);
       } else {
