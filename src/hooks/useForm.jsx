@@ -19,6 +19,8 @@ const useForm = () => {
       [name]: event.target.validationMessage,
     });
 
+    console.log(event.target.closest('#form').checkValidity());
+    console.log(event.target.closest('#form'));
     setIsFormValid(event.target.closest('#form').checkValidity());
   };
 

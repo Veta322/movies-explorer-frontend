@@ -7,6 +7,9 @@ import {
   useLocation,
 } from "react-router-dom";
 
+import oke from "../../images/oke.webp";
+import neoke from "../../images/neoke.webp";
+
 import CurrentUserContext from "../../contexts/CurrentUserContext";
 import * as api from "../../utils/MainApi";
 
@@ -31,7 +34,9 @@ function App() {
   const [currentUser, setCurrentUser] = useState({});
   const [savedMovies, setSavedMovies] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
-  const [isUpdate, setIsUpdate] = useState(false);
+  const [infoTooltip, setInfoTooltip] = useState(false);
+  const [popupImage, setPopupImage] = useState("");
+  const [popupTitle, setPopupTitle] = useState("");
   const path = location.pathname;
 
   function handleIsMenuPopupOpen() {
@@ -40,7 +45,7 @@ function App() {
 
   function closeAllPopups() {
     setIsMenuPopupOpen(false);
-    setIsUpdate(false);
+    setInfoTooltip(false);
   }
 
   useEffect(() => {
@@ -88,10 +93,22 @@ function App() {
       .register(name, email, password)
       .then(() => {
         handleAuthorize({ email, password });
+        setPopupImage(oke);
+        setPopupTitle("Вы успешно зарегистрировались!");
       })
       .catch((err) => {
         console.log(err);
+        setPopupImage(neoke);
+        setPopupTitle("Что-то пошло не так! Попробуйте ещё раз.");
+      })
+      .finally(() => {
+        setInfoTooltip(true);
+        setIsLoading(false);
       });
+  }
+
+  function handleInfoTooltip() {
+    setInfoTooltip(true);
   }
 
   function handleAuthorize({ email, password }) {
@@ -108,6 +125,9 @@ function App() {
       })
       .catch((err) => {
         console.log(err);
+        setPopupImage(neoke);
+        setPopupTitle("Что-то пошло не так! Попробуйте ещё раз.");
+        handleInfoTooltip();
       })
       .finally(() => {
         setIsLoading(false);
@@ -120,13 +140,17 @@ function App() {
       .setUserInfo(newUserInfo)
       .then((data) => {
         setCurrentUser(data);
-        setIsUpdate(true);
+        setPopupImage(oke);
+        setPopupTitle("Профиль успешо обновлен");
       })
       .catch((err) => {
         console.log(err);
         handleUnauthorized(err);
+        setPopupImage(neoke);
+        setPopupTitle("Что-то пошло не так! Попробуйте ещё раз.");
       })
       .finally(() => {
+        setInfoTooltip(true);
         setIsLoading(false);
       });
   }
@@ -261,8 +285,10 @@ function App() {
           onClose={closeAllPopups}
         ></MenuPopup>
         <InfoTooltip
-          isSuccess={!isUpdate}
-          isUpdate={isUpdate}
+          image={popupImage}
+          title={popupTitle}
+          isOpen={infoTooltip}
+          onCloseClick={closeAllPopups}
           onClose={closeAllPopups}
         />
       </div>

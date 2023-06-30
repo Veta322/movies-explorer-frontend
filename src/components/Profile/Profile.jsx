@@ -1,7 +1,7 @@
-import React, { useEffect, useContext } from "react";
+import React, { useEffect, useContext, useState } from "react";
 import CurrentUserContext from "../../contexts/CurrentUserContext";
 import useForm from "../../hooks/useForm";
-import { EMAIL_REGEX, USER_NAME_REGEX } from "../../utils/constants";
+import { EMAIL_REGEX } from "../../utils/constants";
 import Header from "../Header/Header";
 
 function Profile({
@@ -12,7 +12,7 @@ function Profile({
   isLoading,
 }) {
   const currentUser = useContext(CurrentUserContext);
-
+  const [isLastValues, setIsLastValues] = useState(false);
   const { enteredValues, errors, handleChange, isFormValid, resetForm } =
     useForm();
 
@@ -29,6 +29,15 @@ function Profile({
       email: enteredValues.email,
     });
   }
+
+  useEffect(() => {
+    if (currentUser.name === enteredValues.name && currentUser.email === enteredValues.email) {
+      setIsLastValues(true);
+    } else {
+      setIsLastValues(false);
+    }
+
+  }, [enteredValues]);
 
   return (
     <>
@@ -53,7 +62,6 @@ function Profile({
               required
               onChange={handleChange}
               value={enteredValues.name || ""}
-              pattern={USER_NAME_REGEX}
             ></input>
           </div>
           <span className="profile__input-error">{errors.name}</span>
@@ -72,26 +80,15 @@ function Profile({
           </div>
           <span className="profile__input-error">{errors.email}</span>
         </form>
-
-        <div
-          className={
-            onUpdateUser
-              ? "profile__status"
-              : "profile__status  profile__status-active"
-          }
-        >
-          <h2 className="profile__status-text">Профиль успешо обновлен</h2>
-        </div>
-
         <button
           type="submit"
           className={
-            !isFormValid || isLoading
+            !isFormValid || isLoading || isLastValues
               ? "profile__edit profile__edit-disabled"
               : "profile__edit"
           }
           onClick={handleSubmit}
-          disabled={!isFormValid ? true : false}
+          disabled={!isFormValid}
         >
           Редактировать
         </button>

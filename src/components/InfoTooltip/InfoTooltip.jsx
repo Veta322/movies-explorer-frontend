@@ -1,29 +1,21 @@
 import React from "react";
-import neoke from "../../images/neoke.webp";
-import oke from "../../images/oke.webp";
 
-function InfoTooltip({ onClose, isSuccess, isUpdate }) {
+function InfoTooltip(props) {
   return (
-    <div className={`popup ${!isSuccess ? "popup_open" : ""}`}>
+    <div
+    className={`popup ${props.isOpen ? "popup_open" : ""}`}
+    onClick={props.onCloseClick}
+  >
       <div className="popup__container">
         <button
           type="button"
           className="popup__close-button"
-          onClick={onClose}
+          onClick={props.onClose}
         />
-        {isUpdate ? (
-          <>
-            <img className="popup_image" src={oke} alt="status" />
-            <h2 className="popup__title">Редактирование прошло успешно!</h2>
-          </>
-        ) : (
-          <>
-            <img className="popup_image" src={neoke} alt="status" />
-            <h2 className="popup__title">Что-то пошло не так...</h2>
-          </>
-        )}
+          <img className="popup__image" src={props.image} alt={props.title} />
+          <h2 className="popup__title">{props.title}</h2>
+        </div>
       </div>
-    </div>
   );
 }
 
