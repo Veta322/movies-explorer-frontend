@@ -1,8 +1,7 @@
 import logo from "../../images/circle.svg";
 import profile from "../../images/profile.svg";
 import React from "react";
-import { Link,  useLocation  } from "react-router-dom";
-
+import { Link, useLocation } from "react-router-dom";
 
 function Header({ isLoggedIn, onMenuClick }) {
   const { pathname } = useLocation();
@@ -26,10 +25,24 @@ function Header({ isLoggedIn, onMenuClick }) {
             <Link to="/">
               <img className="header__logo" alt="logo" src={logo} />
             </Link>
-            <Link to="/movies" className={pathname === "/movies" ? "header__link header__link-active" : "header__link"}>
+            <Link
+              to="/movies"
+              className={
+                pathname === "/movies"
+                  ? "header__link header__link-active"
+                  : "header__link"
+              }
+            >
               Фильмы
             </Link>
-            <Link to="/saved-movies" className={pathname === "/saved-movies" ? "header__link header__link-active" : "header__link"}>
+            <Link
+              to="/saved-movies"
+              className={
+                pathname === "/saved-movies"
+                  ? "header__link header__link-active"
+                  : "header__link"
+              }
+            >
               Сохранённые фильмы
             </Link>
           </div>

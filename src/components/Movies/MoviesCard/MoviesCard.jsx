@@ -1,12 +1,7 @@
 import React from "react";
 import { durationConverter } from "../../../utils/utils";
 
-function MoviesCard({
-  card,
-  handleLikeClick,
-  onCardDelete,
-  saved
-}) {
+function MoviesCard({ card, handleLikeClick, onCardDelete, saved }) {
   function onCardClick() {
     handleLikeClick(card);
   }

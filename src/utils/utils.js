@@ -1,10 +1,12 @@
-import { SHORTS } from './constants';
+import {
+  SHORTS
+} from './constants';
 
 export const checkResponse = (res) => {
   if (res.ok) {
-    return res.json(); 
+    return res.json();
   }
-  return Promise.reject(`Error: ${res.status}`); 
+  return Promise.reject(`Error: ${res.status}`);
 };
 
 
@@ -28,5 +30,3 @@ export function filterMovies(movies, query) {
   });
   return moviesByQuery;
 }
-
-
