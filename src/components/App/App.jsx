@@ -4,7 +4,6 @@ import {
   Routes,
   useNavigate,
   Navigate,
-  useLocation,
 } from "react-router-dom";
 
 import oke from "../../images/oke.webp";
@@ -28,7 +27,6 @@ import InfoTooltip from "../InfoTooltip/InfoTooltip";
 
 function App() {
   const navigate = useNavigate();
-  const location = useLocation();
   const [isMenuPopupOpen, setIsMenuPopupOpen] = useState(false);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [currentUser, setCurrentUser] = useState({});
@@ -37,7 +35,7 @@ function App() {
   const [infoTooltip, setInfoTooltip] = useState(false);
   const [popupImage, setPopupImage] = useState("");
   const [popupTitle, setPopupTitle] = useState("");
-  const path = location.pathname;
+
 
   function handleIsMenuPopupOpen() {
     setIsMenuPopupOpen(true);
@@ -58,7 +56,6 @@ function App() {
             localStorage.removeItem("allMovies");
             setIsLoggedIn(true);
           }
-          navigate(path);
         })
         .catch((err) => {
           console.log(err);
