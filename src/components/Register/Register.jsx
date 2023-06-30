@@ -5,14 +5,14 @@ import useForm from "../../hooks/useForm";
 import { EMAIL_REGEX } from "../../utils/constants";
 
 function Register({ onRegister, isLoading }) {
-  const { enteredValues, errors, handleChange, isFormValid } = useForm();
+  const { inputValues, errors, handleChange, isFormValid } = useForm();
 
   function handleSubmit(e) {
     e.preventDefault();
     onRegister({
-      name: enteredValues.name,
-      email: enteredValues.email,
-      password: enteredValues.password,
+      name: inputValues.name,
+      email: inputValues.email,
+      password: inputValues.password,
     });
   }
   return (
@@ -37,7 +37,7 @@ function Register({ onRegister, isLoading }) {
         maxLength="40"
         required
         onChange={handleChange}
-        value={enteredValues.name || ""}
+        value={inputValues.name || ""}
       />
       <span className="form__input-error">{errors.name}</span>
 
@@ -51,7 +51,7 @@ function Register({ onRegister, isLoading }) {
         required
         onChange={handleChange}
         pattern={EMAIL_REGEX}
-        value={enteredValues.email || ""}
+        value={inputValues.email || ""}
       />
       <span className="form__input-error">{errors.email}</span>
 
@@ -64,7 +64,7 @@ function Register({ onRegister, isLoading }) {
         type="password"
         required
         onChange={handleChange}
-        value={enteredValues.password || ""}
+        value={inputValues.password || ""}
       />
       <span className="form__input-error">{errors.password}</span>
     </Form>

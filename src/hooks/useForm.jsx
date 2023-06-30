@@ -1,16 +1,16 @@
-import { useState, useCallback } from 'react';
+import { useState, useCallback } from "react";
 
 const useForm = () => {
   const [isFormValid, setIsFormValid] = useState(false);
-  const [enteredValues, setEnteredValues] = useState({});
+  const [inputValues, setInputValues] = useState({});
   const [errors, setErrors] = useState({});
- 
+
   const handleChange = (event) => {
     const name = event.target.name;
     const value = event.target.value;
 
-    setEnteredValues({
-      ...enteredValues,
+    setInputValues({
+      ...inputValues,
       [name]: value,
     });
 
@@ -19,22 +19,20 @@ const useForm = () => {
       [name]: event.target.validationMessage,
     });
 
-    console.log(event.target.closest('#form').checkValidity());
-    console.log(event.target.closest('#form'));
-    setIsFormValid(event.target.closest('#form').checkValidity());
+    setIsFormValid(event.target.closest("#form").checkValidity());
   };
 
   const resetForm = useCallback(
     (newValues = {}, newErrors = {}, newIsFormValid = false) => {
-      setEnteredValues(newValues);
+      setInputValues(newValues);
       setErrors(newErrors);
       setIsFormValid(newIsFormValid);
     },
-    [setEnteredValues, setErrors, setIsFormValid],
+    [setInputValues, setErrors, setIsFormValid]
   );
 
   return {
-    enteredValues,
+    inputValues,
     handleChange,
     isFormValid,
     errors,

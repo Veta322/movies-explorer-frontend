@@ -4,13 +4,13 @@ import useForm from "../../hooks/useForm";
 import { EMAIL_REGEX } from "../../utils/constants";
 
 function Login({ onAuthorize, isLoading }) {
-  const { enteredValues, errors, handleChange, isFormValid } = useForm();
+  const { inputValues, errors, handleChange, isFormValid } = useForm();
 
   function handleSubmit(e) {
     e.preventDefault();
     onAuthorize({
-      email: enteredValues.email,
-      password: enteredValues.password,
+      email: inputValues.email,
+      password: inputValues.password,
     });
   }
 
@@ -34,7 +34,7 @@ function Login({ onAuthorize, isLoading }) {
         required
         onChange={handleChange}
         pattern={EMAIL_REGEX}
-        value={enteredValues.email || ""}
+        value={inputValues.email || ""}
       />
       <span className="form__input-error">{errors.email}</span>
 
@@ -46,7 +46,7 @@ function Login({ onAuthorize, isLoading }) {
         type="password"
         required
         onChange={handleChange}
-        value={enteredValues.password || ""}
+        value={inputValues.password || ""}
       />
       <span className="form__input-error">{errors.password}</span>
     </Form>

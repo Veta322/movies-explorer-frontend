@@ -12,8 +12,10 @@ function Profile({
   isLoading,
 }) {
   const currentUser = useContext(CurrentUserContext);
-  const [isLastValues, setIsLastValues] = useState(false);
-  const { enteredValues, errors, handleChange, isFormValid, resetForm } =
+
+  const [lastValues, setLastValues] = useState(false);
+
+  const { inputValues, errors, handleChange, isFormValid, resetForm } =
     useForm();
 
   useEffect(() => {
@@ -25,19 +27,21 @@ function Profile({
   function handleSubmit(e) {
     e.preventDefault();
     onUpdateUser({
-      name: enteredValues.name,
-      email: enteredValues.email,
+      name: inputValues.name,
+      email: inputValues.email,
     });
   }
 
   useEffect(() => {
-    if (currentUser.name === enteredValues.name && currentUser.email === enteredValues.email) {
-      setIsLastValues(true);
+    if (
+      currentUser.name === inputValues.name &&
+      currentUser.email === inputValues.email
+    ) {
+      setLastValues(true);
     } else {
-      setIsLastValues(false);
+      setLastValues(false);
     }
-
-  }, [enteredValues]);
+  }, [currentUser.email, currentUser.name, inputValues]);
 
   return (
     <>
@@ -61,7 +65,7 @@ function Profile({
               maxLength="40"
               required
               onChange={handleChange}
-              value={enteredValues.name || ""}
+              value={inputValues.name || ""}
             ></input>
           </div>
           <span className="profile__input-error">{errors.name}</span>
@@ -75,7 +79,7 @@ function Profile({
               required
               onChange={handleChange}
               pattern={EMAIL_REGEX}
-              value={enteredValues.email || ""}
+              value={inputValues.email || ""}
             />
           </div>
           <span className="profile__input-error">{errors.email}</span>
@@ -83,7 +87,7 @@ function Profile({
         <button
           type="submit"
           className={
-            !isFormValid || isLoading || isLastValues
+            !isFormValid || lastValues || isLoading
               ? "profile__edit profile__edit-disabled"
               : "profile__edit"
           }
