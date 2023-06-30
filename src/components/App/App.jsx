@@ -1,10 +1,5 @@
 import React, { useState, useEffect } from "react";
-import {
-  Route,
-  Routes,
-  useNavigate,
-  Navigate,
-} from "react-router-dom";
+import { Route, Routes, useNavigate, Navigate } from "react-router-dom";
 
 import oke from "../../images/oke.webp";
 import neoke from "../../images/neoke.webp";
@@ -35,7 +30,6 @@ function App() {
   const [infoTooltip, setInfoTooltip] = useState(false);
   const [popupImage, setPopupImage] = useState("");
   const [popupTitle, setPopupTitle] = useState("");
-
 
   function handleIsMenuPopupOpen() {
     setIsMenuPopupOpen(true);

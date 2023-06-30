@@ -62,7 +62,7 @@ function Profile({
               id="name-input"
               type="text"
               minLength="2"
-              maxLength="40"
+              maxLength="30"
               required
               onChange={handleChange}
               value={inputValues.name || ""}
