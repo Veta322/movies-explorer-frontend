@@ -1,28 +1,58 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import logo from "../../images/circle.svg";
+import Form from "../Form/Form";
+import useForm from "../../hooks/useForm";
+import { EMAIL_REGEX } from "../../utils/constants";
 
-function Login() {
+function Login({ onAuthorize, isLoading }) {
+  const { inputValues, errors, handleChange, isFormValid } = useForm();
+
+  function handleSubmit(e) {
+    e.preventDefault();
+    onAuthorize({
+      email: inputValues.email,
+      password: inputValues.password,
+    });
+  }
+
   return (
-    <section className="login">
-      <Link to="/">
-        <img className="login__logo" alt="logo" src={logo} />
-      </Link>
-      <h2 className="login__greeting">Рады видеть!</h2>
-      <form className="login__form">
-        <label className="login__form-type">E-mail</label>
-        <input className="login__form-input" placeholder="Введите ваш E-mail" required></input>
-        <label className="login__form-type">Пароль</label>
-        <input className="login__form-input" placeholder="Введите ваш пароль" required></input>
-      </form>
-      <button className="login__btn">Войти</button>
-      <p className="login__text">
-        {" "}
-        Ещё не зарегистрированы?{" "}
-        <Link to="/signup" className="login__signup">Регистрация</Link>{" "}
-      </p>
-    </section>
+    <Form
+      title="Рады видеть!"
+      buttonText="Войти"
+      question="Еще не зарегистрированы?"
+      linkText=" Регистрация"
+      link="/signup"
+      onSubmit={handleSubmit}
+      isDisabled={!isFormValid}
+      isLoading={isLoading}
+    >
+      <label className="form__type">Email</label>
+      <input
+        name="email"
+        className="form__input"
+        id="email-input"
+        type="email"
+        required
+        onChange={handleChange}
+        pattern={EMAIL_REGEX}
+        value={inputValues.email || ""}
+      />
+      <span className="form__input-error">{errors.email}</span>
+
+      <label className="form__type">Пароль</label>
+      <input
+        name="password"
+        className="form__input"
+        id="password-input"
+        type="password"
+        required
+        onChange={handleChange}
+        value={inputValues.password || ""}
+      />
+      <span className="form__input-error">{errors.password}</span>
+    </Form>
   );
 }
 
 export default Login;
+
+

@@ -1,0 +1,18 @@
+const SHORTS = 40;
+const SHOW_MORE_DECKTOP = 3;
+const SHOW_MORE_TABLET = 2;
+const SHOW_MORE_MOBILE = 1;
+const DISPLAY_DECKTOP = 1170;
+const DISPLAY_TABLET = 714;
+
+const EMAIL_REGEX = "[a-z0-9._%+\\-]+@[a-z0-9.\\-]+\\.[a-z]{2,}$";
+
+export {
+  SHOW_MORE_DECKTOP,
+  SHOW_MORE_TABLET,
+  SHOW_MORE_MOBILE,
+  SHORTS,
+  EMAIL_REGEX,
+  DISPLAY_DECKTOP,
+  DISPLAY_TABLET
+};

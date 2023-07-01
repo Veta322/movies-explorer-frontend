@@ -33,6 +33,10 @@
     text-align: right;
     border: none;
     background: none;
+    
+}
+.profile__input-error{
+    color: red;
 }
 
 .profile__mean:focus {
@@ -49,6 +53,14 @@
     border-bottom: 1px solid #E8E8E8;
 }
 
+.profile__status{
+    display: none;
+}
+
+.profile__status-active{
+    display: flex;
+}
+
 .profile__edit {
     text-align: center;
     font-weight: 400;
@@ -58,10 +70,19 @@
     text-decoration: none;
     color: black;
     transition: all .3s;
+    background: none;
+    border: none;
 }
 
 .profile__edit:hover{
     transform: scale(1.1);
+}
+
+.profile__edit-disabled{
+    pointer-events: none;
+    background: #ffffff;
+    color: #000000;
+    opacity: 0.2;
 }
 
 .profile__logout {
@@ -72,6 +93,8 @@
     color: #FF4062;
     text-decoration: none;
     transition: all .3s;
+    background: none;
+    border: none;
 }
 
 .profile__logout:hover{
